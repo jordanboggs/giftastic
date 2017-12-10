@@ -1,12 +1,19 @@
 /* Setting up the layout */
 .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 auto;
   display: grid;
   margin: 5px 20px 0;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: 
+    "buttons buttons"
+    "images search";
+  grid-gap: 50px;
 }
 
 #buttons {
-  grid-column: 1 / 5;
-  grid-row: 1 / 2;
+  grid-area: buttons;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -15,13 +22,11 @@
 }
 
 #search {
-  grid-column: 4 / 5;
-  grid-row: 2 / 3;
+  grid-area: search;
 }
 
 #images {
-  grid-column: 1 / 4;
-  grid-row: 2 / 3;
+  grid-area: images;
 }
 
 .search-item {
