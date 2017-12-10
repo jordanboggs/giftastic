@@ -1,0 +1,30 @@
+/* Setting up the layout */
+.container {
+  display: grid;
+  margin: 5px 20px 0;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "buttons buttons buttons buttons"
+    "images images images search";
+}
+
+#buttons {
+  grid-area: buttons;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#search {
+  grid-area: search;
+}
+
+#images {
+  grid-area: images;
+}
+
+button {
+  padding: 5px;
+  background-color: #7A8CF6;
+  color: #fff;
+}
