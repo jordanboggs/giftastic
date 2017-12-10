@@ -2,7 +2,6 @@
 .container {
   display: grid;
   margin: 5px 20px 0;
-  grid-template-columns: 3fr 1fr;
   grid-template-areas:
     "buttons buttons buttons buttons"
     "images images images search";
@@ -12,7 +11,9 @@
   grid-area: buttons;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 5px;
 }
 
 #search {
@@ -27,4 +28,8 @@ button {
   padding: 5px;
   background-color: #7A8CF6;
   color: #fff;
+}
+
+.search-item {
+  margin: 5px;
 }
