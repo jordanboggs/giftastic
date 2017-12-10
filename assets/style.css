@@ -1,6 +1,5 @@
 /* Setting up the layout */
 .container {
-  max-width: 900px;
   margin: 0 auto;
   padding: 0 auto;
   display: grid;
@@ -23,6 +22,11 @@
 
 #search {
   grid-area: search;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 5px;
 }
 
 #images {
@@ -37,6 +41,7 @@
 }
 
 #add-animal {
+  margin: 5px;
   padding: 5px;
   background-color: #7A8CF6;
   color: #fff;
