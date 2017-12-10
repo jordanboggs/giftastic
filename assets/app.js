@@ -12,7 +12,7 @@ $(document).ready(function(){
 
   var initialButtons = function() {
     game.buttons.forEach(element => {
-      $("#buttons").append(`<button>${element}</button>`);
+      $("#buttons").append(`<button class="search-item">${element}</button>`);
     });
   };
 
