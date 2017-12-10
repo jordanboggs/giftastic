@@ -10,11 +10,24 @@ $(document).ready(function(){
               "hedgehog","echidna","fox"],
   };
 
-  var initialButtons = function() {
+  var renderButtons = function() {
+    $("#buttons").empty();
+
     game.buttons.forEach(element => {
       $("#buttons").append(`<button class="search-item">${element}</button>`);
     });
   };
 
-  initialButtons();
+  renderButtons();
+
+  // This function handles events where a new animal is added
+  $("#add-animal").click(function(event) {
+    event.preventDefault();
+    let animal = $("#animal-input").val().trim();
+
+    game.buttons.push(animal);
+
+    renderButtons();
+  });
+
 });
