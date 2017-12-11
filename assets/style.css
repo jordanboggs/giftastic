@@ -31,6 +31,11 @@
 
 #images {
   grid-area: images;
+  display: flux;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 5px;
 }
 
 .search-item {
@@ -38,6 +43,11 @@
   padding: 5px;
   background-color: #7A8CF6;
   color: #fff;
+}
+
+.result-item {
+  margin: 5px;
+  padding: 5px;
 }
 
 #add-animal {
