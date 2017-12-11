@@ -15,7 +15,7 @@ var renderButtons = function() {
   });
 };
 
-renderButtons();
+$(document).ready(renderButtons());
 
 // This function handles events where a new animal is added
 $(document).on("click", "#add-animal", function(event) {
@@ -28,7 +28,6 @@ $(document).on("click", "#add-animal", function(event) {
 });
 
 // This function calls the GIPHY API to display animal gifs
-// $(".search-item").click(function() {
 $(document).on("click", ".search-item", function() {
   const animal = $(this).attr("data-animal");
 
