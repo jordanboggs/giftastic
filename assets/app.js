@@ -5,16 +5,14 @@
  * 2017 DU Coding Boot Camp
  */
 $(document).ready(function(){
-  var game = {
-    buttons: ["cat","dog","rabbit","bird","capybara","llama","alpaca",
-              "hedgehog","echidna","fox"],
-  };
+  var buttons = ["cat","dog","rabbit","bird","capybara","llama","alpaca",
+                 "hedgehog","echidna","fox"];
 
   var renderButtons = function() {
     $("#buttons").empty();
 
-    game.buttons.forEach(element => {
-      $("#buttons").append(`<button class="search-item">${element}</button>`);
+    buttons.forEach(element => {
+      $("#buttons").append(`<button class="search-item" data-animal="${element}">${element}</button>`);
     });
   };
 
@@ -25,9 +23,32 @@ $(document).ready(function(){
     event.preventDefault();
     let animal = $("#animal-input").val().trim();
 
-    game.buttons.push(animal);
+    buttons.push(animal);
 
     renderButtons();
+  });
+
+  // This function calls the GIPHY API to display animal gifs
+  $(".search-item").click(function() {
+    const animal = $(this).attr("data-animal");
+
+    const queryURL = `https://api.giphy.com/v1/gifs/search?q=${animal}&api_key=xglemIPCq6dg9YlSR2vXBBkXTxbgyqUg&limit=10`;
+    
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      const results = response.data;
+
+      for (let i = 0; i < results.length; i++) {
+        $("#images").prepend(`
+          <div class="result-item">
+            <p>Rating: ${results[i].rating.toUpperCase()}</p>
+            <img src="${results[i].images.fixed_height.url}">
+          </div>
+        `);
+      }
+    });
   });
 
 });
