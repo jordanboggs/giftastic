@@ -2,7 +2,7 @@
   margin: 0 auto;
   padding: 0 auto;
   display: grid;
-  margin: 5px 20px 0;
+  margin: 5px 10px 0;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: minmax(50px, auto) 1fr;
   grid-template-areas: 
@@ -32,9 +32,8 @@
 #images {
   grid-area: images;
   display: flux;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-between;
   padding: 5px;
 }
 
@@ -48,6 +47,8 @@
 .result-item {
   margin: 5px;
   padding: 5px;
+  flex: 1;
+  display: inline-block;
 }
 
 #add-animal {
