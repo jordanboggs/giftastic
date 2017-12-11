@@ -7,11 +7,13 @@
 var buttons = ["cat","dog","rabbit","bird","capybara","llama","alpaca",
                 "hedgehog","echidna","fox"];
 
+// This function draws the array buttons in id #buttons
 var renderButtons = function() {
   $("#buttons").empty();
 
   buttons.forEach(element => {
-    $("#buttons").append(`<button class="search-item" data-animal="${element}">${element}</button>`);
+    $("#buttons").append(`<button class="search-item" 
+                           data-animal="${element}">${element}</button>`);
   });
 };
 
@@ -43,9 +45,27 @@ $(document).on("click", ".search-item", function() {
       $("#images").prepend(`
         <div class="result-item">
           <p>Rating: ${results[i].rating.toUpperCase()}</p>
-          <img src="${results[i].images.fixed_height.url}">
+          <img src="${results[i].images.fixed_height_still.url}"
+               data-still="${results[i].images.fixed_height_still.url}"
+               data-animate="${results[i].images.fixed_height.url}"
+               data-state="still" class="gif">
         </div>
       `);
     }
   });
+});
+
+$(document).on("click", ".gif", function() {
+  let state = $(this).attr('data-state');
+
+  if (state === 'still') {
+    let newSrc = $(this).attr('data-animate');
+    $(this).attr('src', newSrc);
+    $(this).attr('data-state', 'animate');
+  }
+  else {
+    let newSrc = $(this).attr('data-still');
+    $(this).attr('src', newSrc);
+    $(this).attr('data-state', 'still');
+  }
 });
