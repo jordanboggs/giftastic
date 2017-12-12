@@ -7,6 +7,8 @@
 var topics = ["cat","dog","rabbit","bird","capybara","llama","alpaca",
                 "hedgehog","echidna","fox"];
 
+var buttonPresses = 0;
+
 // This function draws the array buttons in id #buttons
 var renderButtons = function() {
   $("#buttons").empty();
@@ -31,6 +33,12 @@ $(document).on("click", "#add-animal", function(event) {
 
 // This function calls the GIPHY API to display animal gifs
 $(document).on("click", ".search-item", function() {
+  // Hide instructions if needed
+  if (buttonPresses < 1) {
+    $('#images').text("");
+  }
+
+
   const animal = $(this).attr("data-animal");
 
   const queryURL = `https://api.giphy.com/v1/gifs/search?q=${animal}&api_key=xglemIPCq6dg9YlSR2vXBBkXTxbgyqUg&limit=10`;
@@ -53,6 +61,8 @@ $(document).on("click", ".search-item", function() {
       `);
     }
   });
+
+  buttonPresses++;
 });
 
 $(document).on("click", ".gif", function() {
