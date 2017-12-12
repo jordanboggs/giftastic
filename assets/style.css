@@ -3,7 +3,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5em;
   color: #444;
-  background-color: #eee;
+  background-image: url('./assets/images/white_carbon.png');
 }
 
 .container {
