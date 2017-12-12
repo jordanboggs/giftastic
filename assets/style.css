@@ -1,3 +1,11 @@
+body {
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5em;
+  color: #444;
+  background-color: #eee;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 auto;
@@ -39,21 +47,33 @@
 
 .search-item {
   margin: 5px;
-  padding: 5px;
+  padding: 7px;
   background-color: #7A8CF6;
   color: #fff;
+  border-radius: 10px;
+  border: 0;
 }
 
 .result-item {
   margin: 5px;
   padding: 5px;
+  border: 3px solid #7A8CF6;
+  border-radius: 10px;
   flex: 1;
   display: inline-block;
 }
 
 #add-animal {
-  margin: 5px;
-  padding: 5px;
+  margin: 5px 0;
+  padding: 7px;
   background-color: #7A8CF6;
   color: #fff;
+  border-radius: 10px;
+  border: 0;
+}
+
+#animal-input {
+  border-radius: 5px;
+  border: 1px solid #444;
+  padding: 5px;
 }
