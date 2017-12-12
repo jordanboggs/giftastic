@@ -38,7 +38,6 @@ $(document).on("click", ".search-item", function() {
     $('#images').text("");
   }
 
-
   const animal = $(this).attr("data-animal");
 
   const queryURL = `https://api.giphy.com/v1/gifs/search?q=${animal}&api_key=xglemIPCq6dg9YlSR2vXBBkXTxbgyqUg&limit=10`;
