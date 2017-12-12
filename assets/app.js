@@ -4,14 +4,14 @@
 * by Jordan Boggs
 * 2017 DU Coding Boot Camp
 */
-var buttons = ["cat","dog","rabbit","bird","capybara","llama","alpaca",
+var topics = ["cat","dog","rabbit","bird","capybara","llama","alpaca",
                 "hedgehog","echidna","fox"];
 
 // This function draws the array buttons in id #buttons
 var renderButtons = function() {
   $("#buttons").empty();
 
-  buttons.forEach(element => {
+  topics.forEach(element => {
     $("#buttons").append(`<button class="search-item" 
                            data-animal="${element}">${element}</button>`);
   });
@@ -24,7 +24,7 @@ $(document).on("click", "#add-animal", function(event) {
   event.preventDefault();
   let animal = $("#animal-input").val().trim();
 
-  buttons.push(animal);
+  topics.push(animal);
 
   renderButtons();
 });
