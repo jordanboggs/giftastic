@@ -4,8 +4,10 @@
 * by Jordan Boggs
 * 2017 DU Coding Boot Camp
 */
-var topics = ["cat","dog","rabbit","bird","capybara","llama","alpaca",
-                "hedgehog","echidna","fox"];
+var topics = ["jean-luc picard","worf","geordie laforge", "william riker",
+              "captain kirk","spock","ben sisko","darth vader",
+              "luke skywalker","chewbacca","han solo","princess leia",
+              "admiral adama","lieutenant starbuck","gaius baltar"];
 
 var buttonPresses = 0;
 
