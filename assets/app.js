@@ -1,9 +1,9 @@
 /*
-* G I F T A S T I C
-* Using GIPHY'S API
-* by Jordan Boggs
-* 2017 DU Coding Boot Camp
-*/
+ * G I F T A S T I C
+ * Using GIPHY'S API
+ * by Jordan Boggs
+ * 2017 DU Coding Boot Camp
+ */
 var topics = ["jean-luc picard","worf","geordie laforge", "william riker",
               "captain kirk","spock","ben sisko","darth vader",
               "luke skywalker","chewbacca","han solo","princess leia",
@@ -42,7 +42,8 @@ $(document).on("click", ".search-item", function() {
 
   const animal = $(this).attr("data-animal");
 
-  const queryURL = `https://api.giphy.com/v1/gifs/search?q=${animal}&api_key=xglemIPCq6dg9YlSR2vXBBkXTxbgyqUg&limit=10`;
+  const queryURL = `https://api.giphy.com/v1/gifs/search?q=${animal}
+                    &api_key=xglemIPCq6dg9YlSR2vXBBkXTxbgyqUg&limit=10`;
   
   $.ajax({
     url: queryURL,
